@@ -76,6 +76,7 @@ before by the Classifier. One issue that we will have to handle is any new words
 present in the test data. If the test data has words that were not present in the train data when the
 Classifier was being trained, Python will throw a Key Error. One way to handle this was we
 assigned tiny probability to these words.
+
 The Classifier did a decent job in classifying both kinds of documents, positive and negative, but
 after looking at the results we noticed that it does slightly better on the negative documents than
 on the positive ones. As mentioned above 10918 documents out of 12500 negative documents
@@ -87,7 +88,11 @@ about 1% in the negative ones. But pre-processing reduced the size of the traini
 the time taken to train the classifier after the processing was significantly less. Before pre-
 processing the data, the classifier took more than 30 minutes to learn from the data but after the
 pre-processing step we could manage to train the classifier within 20 minutes.
+
+
 Further Investigation
+
+
 Did you try any alternative pre-processing? Why?
 This is not a huge pre-processing step but apart from filtering the stop words from the original
 data and also stemming the words, we also filtered out the punctuations, numbers and other
@@ -100,7 +105,9 @@ the accuracy of the classifier, because the dataset was smaller and we knew what
 algorithm performed well in predicting the sentiments of the documents. As for new words that
 were not in the training data, we had to handle them differently which reduced the efficiency but
 the algorithm still managed to perform well.
-Some misclassifications that we observed. And the General Rule!
+Some misclassifications that we observed. 
+And the General Rule!
+
 The Naive Bayes Classifier does a reasonable job in predicting the sentiments of the documents
 but it has its limitations. When the test document has unknown words, i.e., words that were not
 included when training the classifier, the classifier shows poor performance. In our case, when
